@@ -13,19 +13,38 @@
 ![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/98f0368e-4ebb-492f-b60b-3729c78f82f8)
 
 # Пишем скрипт watchlog.sh в директории /opt
-![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/50c5301b-011e-4581-a064-83ea04c2e49d)
+![Screenshot from 2023-06-19 11-27-40](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/9354865b-c64b-475a-812a-cc5f981bd944)
+
 
 
 # Содержимое скрипта
-![Uploading image.png…]()
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/50c5301b-011e-4581-a064-83ea04c2e49d)
 
 
 # Добавим права на запуск файла, используя команду chmod +x
- ![изображение](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/7efb5e77-666e-4b1d-af20-07d61af5731c)
-
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/01171f93-bf5e-4bf7-848f-6ada3d16420c)
 
 # Создадим юнит для сервиса. Все юниты в системе Centos хрянятся в папке /etc/systemd/system
-![изображение](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/cf39b45c-9b45-4f00-9965-c6cd1833c2f2)
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/3a30dda6-c79e-4746-bec6-9f285b35e0ce)
+
 # Сам юнит
 
-![изображение](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/a98643cb-eb7f-42ac-9c36-41dd673a988b)
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/b4a78697-7369-4e86-b33d-b8c83e0ae6e6)
+
+# Create unit for time
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/af31fdc3-5dfe-430b-97d2-c9aa7ba679ba)
+
+# Code 
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/245b855a-bca3-40b2-aeff-79fe0fe93ea9)
+# Start timer systemctl start watchlog.timer. Ande check result  tail -f /var/log/messages
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/c8a98edc-4150-4fab-9a11-4863a8517340)
+
+
+
+
+
+
+
+
+
+
