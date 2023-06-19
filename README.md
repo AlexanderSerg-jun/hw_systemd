@@ -55,4 +55,7 @@
 
 # Дополнить Юнит-файл apache httpd возможностью запустить несколько инстансов сервера с разными конфигами
 
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/adb8d1fc-710f-4242-9725-a48d561f739d)
+
+
 
