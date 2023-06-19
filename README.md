@@ -39,11 +39,16 @@
 # Start timer systemctl start watchlog.timer. Ande check result  tail -f /var/log/messages
 ![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/c8a98edc-4150-4fab-9a11-4863a8517340)
 
+# 2.Из epel установитþ spawn-fcgi и переписатþ init-скрипт на unit-файл. Имсервиса должно также назýватþсā.
 
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/72f776df-12ea-4d9b-92b9-3830d5437a98)
 
-
-
-
+# edit file 
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/62284945-c8d1-42a2-83d7-324b5fced886)
+# uncomment string
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/73ebb9fa-f16d-440b-b813-996f8cf16ad2)
+# create unit vi /etc/systemd/system/spawn-fcgi.service
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/21c79d21-26a8-4bc4-b3ba-e58b0f39e385)
 
 
 
