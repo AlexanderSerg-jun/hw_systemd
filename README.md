@@ -55,7 +55,17 @@
 
 # Дополнить Юнит-файл apache httpd возможностью запустить несколько инстансов сервера с разными конфигами
 
-![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/adb8d1fc-710f-4242-9725-a48d561f739d)
 
+# Для запуска нескольких экземпляров сервиса будем использовать шаблон в конфигурации файла окружения (/usr/lib/systemd/system/httpd.service ) добавивь параметр %I
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/adb8d1fc-710f-4242-9725-a48d561f739d)
+# Создаем двай файла окружения 
+
+# Создаем два конфига
+
+# Изменим настройка конфига second.conf
+
+# Запустим два экземпляра
+
+# Проверим используя команду  ss -tulnp | grep httpd
 
 
