@@ -59,13 +59,17 @@
 # Для запуска нескольких экземпляров сервиса будем использовать шаблон в конфигурации файла окружения (/usr/lib/systemd/system/httpd.service ) добавивь параметр %I
 ![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/adb8d1fc-710f-4242-9725-a48d561f739d)
 # Создаем двай файла окружения 
+ ![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/9fecb72c-879a-4d4e-9b69-2f03f9d0bedd)
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/916c0008-3957-4871-b724-0501c5c5794c)
 
 # Создаем два конфига
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/ee14661a-8192-4b3a-8791-7d0157f24813)
 
 # Изменим настройка конфига second.conf
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/1c2b1288-7c8b-47f3-94f4-56be6345ab3a)
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/93e0ffd1-58d6-43c8-89c5-de815f50422f)
 
-# Запустим два экземпляра
-
-# Проверим используя команду  ss -tulnp | grep httpd
+# Запустим два экземпляра # Проверим используя команду  ss -tulnp | grep httpd
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/a80647be-aee2-45e3-97a8-daba96cd5887)
 
 
