@@ -1,20 +1,24 @@
 # hw_systemd
 # Написать сервис, который будет раз в 30 секунд мониторить лог на предмет наличия ключевого слова. Файл и слово должны задаваться в /etc/sysconfig
 # Используя команду vi создадим файл watchlog в директории /etc/sysconfig/
-![1684764087847](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/653a35fc-5e44-4ab6-9959-ad762f4471bd)
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/b737a731-62a4-4c6c-867c-be9825c37d5d)
+
 # Содержимое файла watchlog:
-![1684764125733](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/fc2f95c5-aba6-4dc5-be94-7c7696793f8b)
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/d4b8994d-6153-40d3-a412-0389409f3028)
+
 # При помощи команды touch создадим файл /var/log/watch.log
-![1684764147596](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/c3a4e28d-ef7a-4c1f-848c-691b0e2a1f44)
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/959d1a00-fec4-4666-8176-446300600f56)
+
 # Внесем в него любые строки и ключевое слово "ALERT"
-![1684764332915](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/ecc68afb-74e1-417d-a4ce-57cb28cf9fe7)
-* Пишем скрипт watchlog.sh в директории /opt
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/98f0368e-4ebb-492f-b60b-3729c78f82f8)
+
+# Пишем скрипт watchlog.sh в директории /opt
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/50c5301b-011e-4581-a064-83ea04c2e49d)
 
 
-******
-![1684764986621](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/55c6fe06-b0b3-4f8d-956b-cc12be1f7448)
 # Содержимое скрипта
-![1684764968095](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/23ea5ecb-8352-4176-b79c-526ed806ab5d)
+![Uploading image.png…]()
+
 
 # Добавим права на запуск файла, используя команду chmod +x
  ![изображение](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/7efb5e77-666e-4b1d-af20-07d61af5731c)
