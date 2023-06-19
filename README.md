@@ -50,6 +50,9 @@
 # create unit vi /etc/systemd/system/spawn-fcgi.service
 ![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/21c79d21-26a8-4bc4-b3ba-e58b0f39e385)
 
+# check it systemctl start spawn-fcgi systemctl status spawn-fcgi
+![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/e89bcc72-fa95-44f1-b697-6924add7b1c7)
+
 
 
 
