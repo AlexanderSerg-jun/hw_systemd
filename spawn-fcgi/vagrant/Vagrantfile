@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
       yum -y install epel-release
   
       # Устанавливаем spawn-fcgi
-      yum -y install spawn-fcgi
+      yum -y install spawn-fcgi php php-cli mod_fcgid httpd
   
       # Удаляем init-скрипт spawn-fcgi
       rm -f /etc/init.d/spawn-fcgi
@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
       # Активируем сервис spawn-fcgi
       systemctl enable spawn-fcgi.service
       systemctl start spawn-fcgi.service
-  
+      systemctl status spawn-fcgi.service 
     SHELL
   end
   
