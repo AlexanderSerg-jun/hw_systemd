@@ -1,0 +1,27 @@
+Vagrant.configure("2") do |config|
+
+    config.vm.box = "centos/7"   # выбираем базовый образ
+    config.vm.provision "shell", inline: <<-SHELL
+            mkdir -p ~root/.ssh; cp ~vagrant/.ssh/auth* ~root/.ssh
+    SHELL
+    config.vm.provision "file", source: "../etc/systemd/system/spawn-fcgi.service", destination: "/tmp/spawn-fcgi.service"
+  
+    config.vm.provision "shell", inline: <<-SHELL
+      mv /tmp/spawn-fcgi.service /etc/systemd/system/spawn-fcgi.service
+      # Обновляем список пакетов и устанавливаем EPEL-репозиторий
+      yum -y update
+      yum -y install epel-release
+  
+      # Устанавливаем spawn-fcgi
+      yum -y install spawn-fcgi
+  
+      # Удаляем init-скрипт spawn-fcgi
+      rm -f /etc/init.d/spawn-fcgi
+  
+      # Активируем сервис spawn-fcgi
+      systemctl enable spawn-fcgi.service
+      systemctl start spawn-fcgi.service
+  
+    SHELL
+  end
+  
