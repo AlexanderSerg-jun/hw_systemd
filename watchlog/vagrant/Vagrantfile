@@ -1,0 +1,24 @@
+Vagrant.configure("2") do |config|
+
+    config.vm.box = "centos/7"   # выбираем базовый образ
+    config.vm.provision "shell", inline: <<-SHELL
+            mkdir -p ~root/.ssh; cp ~vagrant/.ssh/auth* ~root/.ssh
+    SHELL
+    config.vm.provision "file", source: "../etc/systemd/system/watchlog.service", destination: "/tmp/watchlog.service"
+    config.vm.provision "file", source: "../etc/systemd/system/watchlog.timer", destination: "/tmp/watchlog.timer"
+    config.vm.provision "file", source: "../etc/sysconfig/watchlog", destination: "/tmp/watchlog"
+    config.vm.provision "file", source: "../opt/watchlog.sh", destination: "/tmp/watchlog.sh"
+    config.vm.provision "shell", inline: <<-SHELL
+      mv /tmp/watchlog.service /etc/systemd/system/watchlog.service
+      mv /tmp/watchlog.timer   /etc/systemd/system/watchlog.timer
+      mv /tmp/watchlog         /etc/sysconfig/watchlog
+      mv /tmp/watchlog.sh      /opt/watchlog.sh
+      
+            
+      # Активируем сервис watchlog
+      systemctl start watchlog.timer
+      tail -f /var/log/messages
+  
+    SHELL
+  end
+  
