@@ -1,34 +1,24 @@
-# -*- mode: ruby -*-
-# vim: set ft=ruby :
-
-MACHINES = {
-  :otuslinux => {
-        :box_name => "centos/8",
-        :ip_addr => '192.168.56.101'
-  },
-}
-
 Vagrant.configure("2") do |config|
 
-  MACHINES.each do |boxname, boxconfig|
-
-      config.vm.define boxname do |box|
-
-          box.vm.box = boxconfig[:box_name]
-          box.vm.host_name = boxname.to_s
-
-          #box.vm.network "forwarded_port", guest: 3260, host: 3260+offset
-
-          box.vm.network "private_network", ip: boxconfig[:ip_addr]
-
-          box.vm.provider :virtualbox do |vb|
-            vb.customize ["modifyvm", :id, "--memory", "1024"]
-          end
-
-          box.vm.provision :shell do |s|
-             s.inline = 'mkdir -p ~root/.ssh; cp ~vagrant/.ssh/auth* ~root/.ssh'
-          end
-
-      end
+    config.vm.box = "centos/7"   # выбираем базовый образ
+    config.vm.provision "file", source: "../etc/systemd/system/spawn-fcgi.service", destination: "/etc/systemd/system/spawn-fcgi.service"
+  
+    config.vm.provision "shell", inline: <<-SHELL
+      # Обновляем список пакетов и устанавливаем EPEL-репозиторий
+      yum -y update
+      yum -y install epel-release
+  
+      # Устанавливаем spawn-fcgi
+      yum -y install spawn-fcgi
+  
+      # Удаляем init-скрипт spawn-fcgi
+      rm -f /etc/init.d/spawn-fcgi
+  
+      # Активируем сервис spawn-fcgi
+      systemctl enable spawn-fcgi.service
+      systemctl start spawn-fcgi.service
+  
+    SHELL
+  
   end
-end
+  
