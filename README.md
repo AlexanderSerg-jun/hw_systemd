@@ -39,7 +39,7 @@
 # Start timer systemctl start watchlog.timer. Ande check result  tail -f /var/log/messages
 ![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/c8a98edc-4150-4fab-9a11-4863a8517340)
 
-# 2.Из epel установитþ spawn-fcgi и переписатþ init-скрипт на unit-файл. Имсервиса должно также назýватþсā.
+# 2.Из epel установит spawn-fcgi и переписатþ init-скрипт на unit-файл. Имсервиса должно также назýватþсā.
 
 ![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/72f776df-12ea-4d9b-92b9-3830d5437a98)
 
