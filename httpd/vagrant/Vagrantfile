@@ -1,0 +1,28 @@
+Vagrant.configure("2") do |config|
+
+    config.vm.box = "centos/7"   # выбираем базовый образ
+   
+    config.vm.provision "shell",path: "install.sh"
+    config.vm.provision "file", source: "../first.conf", destination: "/tmp/first.conf"
+    config.vm.provision "file", source: "../second.conf", destination: "/tmp/second.conf"
+    config.vm.provision "file", source: "../httpd.service", destination: "/tmp/httpd.service"
+    config.vm.provision "file", source: "../httpd@.service", destination: "/tmp/httpd@.service"
+    config.vm.provision "file", source: "../httpd-first.service", destination: "/tmp/httpd-first.service"
+    config.vm.provision "file", source: "../httpd-second.service", destination: "/tmp/httpd-second.service"
+    config.vm.provision "shell", inline: <<-SHELL
+     mv /tmp/first.conf /etc/httpd/conf/first.conf
+     mv /tmp/second.conf   /etc/httpd/conf/second.conf
+     mv /tmp/httpd.service  /usr/lib/systemd/system/httpd.service
+     mv /tmp/httpd@.service  /usr/lib/systemd/system/httpd@.service
+     mv /tmp/httpd-first.service /usr/lib/systemd/system/httpd-first.service
+     mv /tmp/httpd-second.service /usr/lib/systemd/system/httpd-second.service
+      
+            
+      # Активируем сервис watchlog
+      systemctl start httpd@first
+      systemctl start httpd@second
+      ss -tulnp | grep httpd
+  
+     SHELL
+
+end  
