@@ -1,3 +1,5 @@
+#  В папках httpd, spawn-fcgi, watchlog содержиться vagrantfile и дополнительные файлы для развертывания с использованием Vagrant shell provisioner. 
+# Общее описание работы выполненное по шагам
 # hw_systemd
 # Написать сервис, который будет раз в 30 секунд мониторить лог на предмет наличия ключевого слова. Файл и слово должны задаваться в /etc/sysconfig
 # Используя команду vi создадим файл watchlog в директории /etc/sysconfig/
@@ -39,7 +41,7 @@
 # Start timer systemctl start watchlog.timer. Ande check result  tail -f /var/log/messages
 ![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/c8a98edc-4150-4fab-9a11-4863a8517340)
 
-# 2.Из epel установит spawn-fcgi и переписатþ init-скрипт на unit-файл. Имсервиса должно также назýватþсā.
+# 2.Из epel установить spawn-fcgi и переписать init-скрипт на unit-файл. Имя сервиса должно также называться.
 
 ![image](https://github.com/AlexanderSerg-jun/hw_systemd/assets/85576634/72f776df-12ea-4d9b-92b9-3830d5437a98)
 
